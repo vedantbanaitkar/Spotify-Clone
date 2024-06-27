@@ -1,10 +1,19 @@
 @import url("https://fonts.googleapis.com/css2?family=Figtree:ital,wght@0,300..900;1,300..900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
 
+:root {
+  --a: 0;
+}
+
 * {
   margin: 0;
   padding: 0;
   font-family: "Figtree", sans-serif;
 }
+
+.close {
+  display: none;
+}
+
 body {
   background-color: black;
   color: white;
@@ -36,15 +45,17 @@ body {
 .heading {
   display: flex;
   gap: 15px;
-  /* width: 100%; */
+  width: 100%;
   list-style: none;
   padding-top: 14px;
+  padding: 23px 13px;
   font-weight: bold;
   align-items: center;
+  font-size: 13px;
 }
 
 .heading img {
-  width: 20px;
+  width: 30px;
 }
 
 .footer {
@@ -54,7 +65,7 @@ body {
   position: absolute;
   bottom: 0;
   padding: 10px 0px;
-  font-size: 12px;
+  font-size: 10px;
   flex-wrap: wrap;
 }
 
@@ -63,8 +74,12 @@ body {
   text-decoration: none;
 }
 
+.footer a:hover {
+  text-decoration: underline;
+}
+
 .right {
-  margin: 16px 16px 16px 0px;
+  margin: 16px 0px;
   position: relative;
 }
 
@@ -83,12 +98,12 @@ body {
 }
 
 .cardContainer {
-  margin: 3 0px;
+  margin: 30px;
   display: flex;
   gap: 10px;
   flex-wrap: wrap;
-  overflow-y: scroll;
-  max-height: 70vh;
+  overflow-y: auto;
+  max-height: 60vh;
 }
 
 .card {
@@ -98,6 +113,13 @@ body {
   background-color: #252525;
   position: relative;
   cursor: pointer;
+  transition: all 0.3s;
+}
+
+.card:hover {
+  background-color: rgb(105, 103, 103);
+  cursor: pointer;
+  --a: 1;
 }
 
 .card > * {
@@ -112,15 +134,29 @@ body {
   position: absolute;
   top: 152px;
   right: 19px;
+  
 }
 .circle-container {
-  display: flex;
+  /* display: flex;
   justify-content: center;
   align-items: center;
   width: 50px;
   height: 50px;
   background-color: #1fdf64;
   border-radius: 50%;
+  width: 28px; */
+    height: 28px;
+    background-color: #1fdf64;
+    border-radius: 50%;
+    padding: 4px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* position: relative; */
+    bottom: 88px;
+    right: 17px;
+    opacity: var(--a);
+    transition: all 1s ease-out;
 }
 
 .circle-container svg {
@@ -135,6 +171,7 @@ body {
 .signupbtn {
   font-weight: bold;
   background-color: rgb(34, 34, 34);
+  color: rgb(156, 148, 148);
   color: grey;
   outline: none;
   border: none;
@@ -150,7 +187,7 @@ body {
 .loginbtn {
   width: 78px;
   background-color: wheat;
-  border-radius: 20px;
+  border-radius: 21px;
   color: black;
   /* font-weight: bold; */
   padding: 10px;
@@ -176,5 +213,33 @@ body {
 .songbuttons {
   display: flex;
   justify-content: center;
-  gap: 22px;
+  gap: 16px;
+}
+
+.songList ul {
+  padding: 0 12px;
+}
+.songList ul li {
+  list-style-type: decimal;
+    display: flex;
+    justify-content: space-between;
+    gap: 12px;
+    cursor: pointer;
+    padding: 12px 0;
+    border: 1px solid rgba(146, 143, 143, 0.491);
+    margin: 12px 0;
+    padding: 13px;
+    border-radius: 5px;
+}
+
+.playnow {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.playnow span {
+    font-size: 15px;
+    width: 64px;
+    padding: 12px;
 }
