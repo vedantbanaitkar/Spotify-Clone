@@ -53,7 +53,7 @@ async function getSongs(folder) {
           </div>
         </li.`;
 
-        return songs
+    
   }
 
   //play first song
@@ -68,6 +68,8 @@ async function getSongs(folder) {
       // console.log(e.querySelector(".info").firstElementChild.innerHTML);
     });
   });
+
+  return songs;
 }
 
 async function displayAlbums() {
@@ -120,7 +122,7 @@ async function displayAlbums() {
   Array.from(document.getElementsByClassName("card")).forEach((e) => {
     e.addEventListener("click", async (item) => {
       songs = await getSongs(`songs/${item.currentTarget.dataset.folder}`);
-      playMusic(songs[0]);
+      playMusic(songs[0], true);
     });
   });
 }

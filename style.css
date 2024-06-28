@@ -204,6 +204,8 @@ body {
 
 .playbar {
   /* margin: auto; */
+  /* margin-left: auto;
+  margin-right: auto; */
   position: fixed;
   bottom: 30px;
   filter: invert(1);
@@ -211,7 +213,10 @@ body {
   width: 70vw;
   padding: 12px;
   border-radius: 30px;
-  height: 40px;
+  height: 50px;
+  left: 63%;
+  transform: translateX(-50%);
+  /* top: 50px; */
 }
 
 
@@ -272,9 +277,9 @@ body {
   width: 98%;
   background:  black;
   position: absolute;
-  bottom: 0;
+  bottom: 10px;
   border-radius: 10px;
-  margin: 6px;
+  margin: 6px auto;
   cursor: pointer;
 }
 
@@ -327,3 +332,9 @@ body {
   display: flex;
   justify-content: space-between;
 }
+
+.range {
+  filter: invert(1);
+    accent-color: #1b91e5; /* Change this to your desired color */
+}
+
