@@ -81,6 +81,7 @@ body {
 .right {
   margin: 16px 0px;
   position: relative;
+  align-items: center;
 }
 
 .header {
@@ -104,6 +105,7 @@ body {
   flex-wrap: wrap;
   overflow-y: auto;
   max-height: 60vh;
+  /* padding-bottom: 143px; */
 }
 
 .card {
@@ -117,7 +119,7 @@ body {
 }
 
 .card:hover {
-  background-color: rgb(105, 103, 103);
+  background-color: rgb(22, 21, 21);
   cursor: pointer;
   --a: 1;
 }
@@ -134,7 +136,6 @@ body {
   position: absolute;
   top: 152px;
   right: 19px;
-  
 }
 .circle-container {
   /* display: flex;
@@ -145,18 +146,18 @@ body {
   background-color: #1fdf64;
   border-radius: 50%;
   width: 28px; */
-    height: 28px;
-    background-color: #1fdf64;
-    border-radius: 50%;
-    padding: 4px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    /* position: relative; */
-    bottom: 88px;
-    right: 17px;
-    opacity: var(--a);
-    transition: all 1s ease-out;
+  height: 28px;
+  background-color: #1fdf64;
+  border-radius: 50%;
+  padding: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* position: relative; */
+  bottom: 88px;
+  right: 17px;
+  opacity: var(--a);
+  transition: all 1s ease-out;
 }
 
 .circle-container svg {
@@ -203,24 +204,36 @@ body {
 
 .playbar {
   /* margin: auto; */
-  position: absolute;
-  bottom: 0;
-  background-color: green;
-  width: 98.2%;
+  position: fixed;
+  bottom: 30px;
+  filter: invert(1);
+  background-color: #dad5d5;
+  width: 70vw;
   padding: 12px;
+  border-radius: 30px;
+  height: 40px;
 }
+
 
 .songbuttons {
-  display: flex;
-  justify-content: center;
-  gap: 16px;
+    display: flex;
+    justify-content: center;
+    gap: 16px;
 }
 
-.songList ul {
-  padding: 0 12px;
+.songList {
+    height: 544px;
+    overflow: auto;
+    margin-bottom: 44px;
 }
+
+
+.songList ul {
+    padding: 0 12px;
+}
+
 .songList ul li {
-  list-style-type: decimal;
+    list-style-type: decimal;
     display: flex;
     justify-content: space-between;
     gap: 12px;
@@ -230,6 +243,16 @@ body {
     margin: 12px 0;
     padding: 13px;
     border-radius: 5px;
+}
+
+.songList .info {
+    font-size: 13px;
+    width: 344px;
+}
+
+
+.info div {
+    word-break: break-all;
 }
 
 .playnow {
@@ -242,4 +265,65 @@ body {
     font-size: 15px;
     width: 64px;
     padding: 12px;
+}
+
+.seekbar{
+  height: 4px;
+  width: 98%;
+  background:  black;
+  position: absolute;
+  bottom: 0;
+  border-radius: 10px;
+  margin: 6px;
+  cursor: pointer;
+}
+
+.circle{
+  width: 13px;
+  height: 13px;
+  border-radius: 13px;
+  background-color: black;
+  position: relative;
+  bottom: 6px;
+  left: 0%;
+  transition: left 0.3s;
+  cursor: pointer;
+}
+
+.songbuttons img{
+  cursor: pointer;
+}
+
+.songinfo{
+  color: black;
+  padding: 0 12px;
+  width: 250px;
+}
+
+.songtime{
+  width: 125px;
+  color: black;
+  padding: 0 12px;
+}
+
+
+
+.volume{
+  display: flex;
+  /* flex-direction: column; */
+  justify-content: center;
+  align-items: center;
+  gap: 12px;
+  cursor: pointer;
+}
+
+.timevol{
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.abovebar{
+  display: flex;
+  justify-content: space-between;
 }
